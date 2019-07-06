@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystal Collector Game</title>
-    <link rel="stylesheet" href="assets/css/style.css" type="css/text">
-    <link rel="stylesheet" href="assets/css/reset.css" type="css/text">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/js/game.js"></script>
-</head>
+    </head>
+
 <body>
-    
+<div class="rules">
+    <p>You will be given a random number at the start of the game.</p>
+    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+    <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+    <p>The value of each crystal is hiddin from you until you click on it.</p>
+    <p>Each time when the game starts, the game will change the values of each crystal.</p>
+</div>
+
+<div>
+    <h2>Target Number:</h2>
+    <h2 id="object-num"> </h2>
+    <h6>Wins: <span id="winsCount"></span>
+        Losses: <span id="lossesCount"></span>
+    </h6>
+</div>
+
+    <div class="container">
+        <!-- <button class="gem" id="gem1" type="button"><img src="./assets/images/bluegem.jfif"></button>
+        <button class="gem" id="gem2" type="button"><img src="./assets/images/orangegem.jfif"></button>
+        <button class="gem" id="gem3" type="button"><img src="./assets/images/raindbowgem.jfif"></button>
+        <button class="gem" id="gem4" type="button"><img src="./assets/images/redgem.jfif"></button> -->
+    </div>
+
+    <div class="current-number">
+        <p>Your total score is:</p>
+        <span id="current-num"> 0 </span>
+    </div>
+
 </body>
+
 </html>
