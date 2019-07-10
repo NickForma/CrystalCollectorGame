@@ -2,6 +2,8 @@ $(document).ready(function () {
 
     //Define Global vars, then your functions, then the rest of your code under that
     let counter = 0;
+    let winsCount = 0;
+    let lossesCount = 0;
 
 
     //Listing gems and pics
@@ -52,7 +54,18 @@ $(document).ready(function () {
     gemArray.forEach(function (e) {
         $('.container').append(elementBuilder(e))
     })
+//resetting game to base values(gem values, counter and target score), keeping wins/losses 
+    const resetGame = function(){
+        console.log(randNum())
+        counter = 0;
+        targetNum();
+        $('#object-num').text(targetNum())
+        randNum();
+        
+        }
 
+        
+    
 
     //Click Handler(s):
     //When we click a button, do this stuff
@@ -61,18 +74,26 @@ $(document).ready(function () {
         let num = parseInt(e.currentTarget.dataset.value)
 
         counter += num
-        console.log(counter)
+        console.log(num);
 
         $('#current-num').text(counter)
         //Check if counter = a random number, chosen at game initialize as global var randomNum
-        //If true {  DO STUFF CAUSE WE WON       }
-        //   else if (counter < randomNum) { still less, go again?  }
-        //   else if (counter > randomNum) { went over, lose }
+        
 
         if (counter === randomNum){
             console.log('hoopla')
-        }else if (counter < randomNum){
+            winsCount ++;
+            $('#winsCount').text(winsCount)
+            resetGame();
+
+        }else if (counter > randomNum){
            console.log('pants')
+           lossesCount++;
+           $('#lossesCount').text(lossesCount);
+           resetGame();
+
+
+
         }
     })
     //
